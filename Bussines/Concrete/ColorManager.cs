@@ -3,6 +3,7 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -18,8 +19,15 @@ namespace Business.Concrete
 
         public void Add(Color color)
         {
-            _colorDal.Add(color);
-            Console.WriteLine("Renk başarıyla eklendi.");
+            if ((_colorDal.GetAll().Any(c => c.ColorName == color.ColorName)) == false)
+            {
+                _colorDal.Add(color);
+                Console.WriteLine("Renk başarıyla eklendi.");
+            }
+            else
+            {
+                Console.WriteLine("Lütfen veritabanında olmayan bir renk giriniz!");
+            }
         }
 
         public void Delete(Color color)
