@@ -13,11 +13,7 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(b => b.BrandId).NotEmpty();
             RuleFor(b => b.BrandName).NotEmpty();
             RuleFor(b => b.BrandName).MinimumLength(3);
-            //RuleFor(b => b.BrandName).Must(BeUniqe).WithMessage("Lütfen veritabanında olmayan bir marka giriniz!");
         }
 
-        //private bool BeUniqe(string arg)
-        //{
-        //}
     }
 }

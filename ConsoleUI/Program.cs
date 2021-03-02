@@ -33,11 +33,6 @@ namespace ConsoleUI
             UserManager userManager = new UserManager(new EfUserDal());
             CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
 
-            userManager.Add(new User 
-            { Id=1, FirstName="Mina", LastName="KANBERK", Email="m.aycaknbrk@gmail.com", Password="123456789a"});
-            
-            customerManager.Add(new Customer { CustomerId = 1, UserId = 1, CompanyName = "AFK" });
-
         }
     }
 }
