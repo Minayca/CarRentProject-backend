@@ -2,12 +2,12 @@
 using Castle.DynamicProxy;
 using Microsoft.Extensions.DependencyInjection;
 using Core.Extentions;
-using Core.Utilities.Inceptors;
 using Core.Utilities.IoC;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Core.Utilities.Interceptors;
 
 namespace Business.BusinessAspect.Aspect
 {
