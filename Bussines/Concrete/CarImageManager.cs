@@ -34,6 +34,7 @@ namespace Business.Concrete
             }
 
             carImage.ImagePath = FileHelper.Add(file);
+            carImage.ImageName = carImage.ImagePath.Substring(57);
             carImage.Date = DateTime.Now;
             _carImageDal.Add(carImage);
             return new SuccessResult(Messages.CarImageAdded);
