@@ -64,6 +64,15 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
         }
 
+        public IDataResult<List<CarDetailDto>> GetCarDetailsByCarId(int carId)
+        {
+            if (DateTime.Now.Hour == 10)
+            {
+                return new ErrorDataResult<List<CarDetailDto>>(Messages.MaintenanceTime);
+            }
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetailsByCarId(carId));
+        }
+
         public IDataResult<List<CarDetailDto>> GetCarDetailsByBrandId(int brandId)
         {
             if (DateTime.Now.Hour == 10)
@@ -92,6 +101,11 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
+        public IDataResult<List<CarDetailDto>> GetCarFilterBrandIdColorId(int brandId, int colorId)
+        {
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarFilterBrandIdColorId(brandId, colorId), Messages.CarsListed);
+        }
+
         [ValidationAspect(typeof(CarValidator))]
         [CacheRemoveAspect("ICarService.Get")]
         public IResult Update(Car car)
@@ -99,5 +113,6 @@ namespace Business.Concrete
             _carDal.Update(car);
             return new SuccessResult(Messages.CarUpdated);
         }
+
     }
 }
