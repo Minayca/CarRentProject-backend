@@ -9,6 +9,6 @@ namespace Business.Abstract
     public interface ICardService
     {
         IResult Add(Card card);
-        IDataResult<List<Card>> GetByCustomerId(int customerId);
+        IDataResult<List<Card>> GetByUserId(int userId);
     }
 }

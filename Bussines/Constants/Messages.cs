@@ -49,7 +49,7 @@ namespace Business.Constants
         public static string PasswordError = "Parola hatası.";
         public static string SuccessfulLogin = "Başarılı giriş.";
         public static string UserAlreadyExists = "Kullanıcı mevcut.";
-        public static string AccessTokenCreated = "Token oluşturuldu.";
+        public static string AccessTokenCreated = "Giriş yapıldı.";
         public static string CardAdded = "Kart başarıyla eklendi.";
         public static string PaymentFailed = "Ödeme başarısız oldu.";
         public static string PaymentSuccessful = "Ödeme başarılı.";

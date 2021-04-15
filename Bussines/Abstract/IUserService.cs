@@ -10,10 +10,11 @@ namespace Business.Abstract
     {
         IDataResult<List<User>> GetAll();
         IDataResult<User> GetById(int id);
+        IResult ProfileUpdate(User user, string password);
         IResult Add(User user);
         IResult Delete(User user);
         IResult Update(User user);
-        List<OperationClaim> GetClaims(User user);
-        User GetByMail(string email);
+        IDataResult<List<OperationClaim>> GetClaims(User user);
+        IDataResult<User> GetByMail(string email);
     }
 }

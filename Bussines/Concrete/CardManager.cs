@@ -24,9 +24,9 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CardAdded);
         }
 
-        public IDataResult<List<Card>> GetByCustomerId(int customerId)
+        public IDataResult<List<Card>> GetByUserId(int userId)
         {
-            return new SuccessDataResult<List<Card>>(_cardDal.GetAll(x => x.CustomerId == customerId));
+            return new SuccessDataResult<List<Card>>(_cardDal.GetAll(x => x.UserId == userId));
         }
     }
 }

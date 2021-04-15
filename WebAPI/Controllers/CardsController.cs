@@ -20,10 +20,10 @@ namespace WebAPI.Controllers
             _cardService = cardService;
         }
 
-        [HttpGet("getbycustomerid")]
-        public IActionResult GetByCustomerId(int customerId)
+        [HttpGet("getbyuserid")]
+        public IActionResult GetByUserId(int userId)
         {
-            var result = _cardService.GetByCustomerId(customerId);
+            var result = _cardService.GetByUserId(userId);
             if (result.Success)
             {
                 return Ok(result);
