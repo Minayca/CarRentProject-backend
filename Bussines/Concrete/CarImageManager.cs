@@ -87,13 +87,12 @@ namespace Business.Concrete
 
         private List<CarImage> CheckIfCarImageNull(int id)
         {
-            string path = @"Images\logo.jpg";
-            var result = _carImageDal.GetAll(c => c.CarId == id).Any();
-            if (!result)
+            var result = _carImageDal.GetAll(c => c.CarId == id);
+            if (!result.Any())
             {
-                return new List<CarImage> { new CarImage { CarId = id, ImagePath = path, Date = DateTime.Now } };
+                return new List<CarImage> { new CarImage { CarId = id, ImageName = "default.jpg", Date = DateTime.Now } };
             }
-            return _carImageDal.GetAll(p => p.CarId == id);
+            return result;
         }
     }
 }
